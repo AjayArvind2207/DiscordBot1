@@ -3,7 +3,7 @@ import discord
 from random import choice
 
 import asyncio
-token = 'ODEzNDIxODIwNTkzOTYzMDQw.YDPEGg.9obiHvChlFBp25Bowg2220i-GPM'
+token = 'token'
 client = commands.Bot(command_prefix = '~', case_insensitive = True)
 
 with open('facts.txt') as f:
@@ -26,11 +26,29 @@ async def fact(ctx):
 async def snipe(ctx):
     embed=discord.Embed(title="Sniped!", url="http://www.youtube.com/watch?v=DLzxrzFCyOs", description=msg, color=0xFF5733)
     await ctx.send(embed = embed)
-    #Haha epic comment
+   
+
+'''
+Actual pictures of somewhat relevance
+<--------------------------------------------------------------------------->
+'''
+
+@client.command(aliases = ['Toppers', 'ToppersTT', 'ToppersTimeTable'])
+async def ttt(ctx):
+    await ctx.channel.send(file=discord.File('images/new_tt.jpg'))
+
+@client.command(aliases  = ['Exam', 'Schedule'])
+async def mock(ctx):
+    await ctx.channel.send(file = discord.File('images/toppersexamschedule.png'))
+
+@client.command()
+async def tt(ctx):
+    await ctx.channel.send(file=discord.File('images/timetablenew.jpeg'))
+
 
 
 '''
-Haha funny picture go BRRRR
+Pictures for fun :D
 
 <---------------------------------------------------->
 '''
@@ -83,26 +101,10 @@ async def ajay(ctx):
     await ctx.channel.send(file=discord.File(f'images/{fch}.png'))
 
 '''
-Actual pictures of somewhat relevance go BRRRRR
-<--------------------------------------------------------------------------->
-'''
-
-@client.command(aliases = ['Toppers', 'ToppersTT', 'ToppersTimeTable'])
-async def ttt(ctx):
-    await ctx.channel.send(file=discord.File('images/new_tt.jpg'))
-
-@client.command(aliases  = ['Exam', 'Schedule'])
-async def mock(ctx):
-    await ctx.channel.send(file = discord.File('images/toppersexamschedule.png'))
-
-@client.command()
-async def tt(ctx):
-    await ctx.channel.send(file=discord.File('images/timetablenew.jpeg'))
-
-'''
-Somewhat meaningful text messages for stuff idk
+Somewhat meaningful text messages for easy accessibility
 <--------------------------------------------------------------------------------->
 '''
+
 @client.command(aliases = ['hi', 'hello'])
 async def hey(ctx):
     await ctx.send('Are you really trying to talk to a bot?!')
